@@ -1,0 +1,10 @@
+version: "3.6"
+
+services:
+    downloader:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: airquality-download:latest
+        volumes:
+            - ./data:/data:rw

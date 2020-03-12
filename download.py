@@ -5,6 +5,7 @@ from functools import partial
 import os
 from pprint import pprint
 import itertools
+import sys
 
 import pandas as pd
 import requests
@@ -89,8 +90,8 @@ def maybe_download(fname, download_func, *, session=None):
     return data
 
 
-def main():
-    data_root = Path('data')
+def main(argv=sys.argv[1:]):
+    data_root = Path(argv[0] if len(argv) >= 1 else 'data')
     with requests.Session() as session:
         print('Metadata...')
         meta = maybe_download(
@@ -152,6 +153,8 @@ def main():
 
         print('Done.')
 
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main(sys.argv[1:]))

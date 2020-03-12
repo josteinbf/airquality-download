@@ -3,6 +3,3 @@ requests
 tqdm
 dask[complete]
 beautifulsoup4
-nbstripout
-jupyter
-ipython

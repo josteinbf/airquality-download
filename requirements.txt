@@ -3,3 +3,7 @@ requests
 tqdm
 dask[complete]
 beautifulsoup4
+psycopg2-binary
+sqlalchemy
+stringcase
+d6tstack[psql]
